@@ -25,11 +25,11 @@ describe("Calculator", () => {
         cy.get('#number4').click();
     })
     it('should give expected output', () => {
+        cy.get('#number4').click()
         cy.get('#decimal').click()
-        cy.get('#operator-divide').click()
-        cy.get('#number9').click();
-        cy.get('#number4').click(); 
-        cy.get('.display').should('contain', '2.25')  
+        cy.get('#number2').click()
+        cy.get('#operator-equals').click()
+        cy.get('.display').should('contain', '4.2')  
     })
 
 
