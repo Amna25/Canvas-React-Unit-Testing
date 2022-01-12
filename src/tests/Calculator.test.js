@@ -18,50 +18,57 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('4');
   })
   it('should add one to four', () => {
-    const operator = container.find('#operator_add')
     const button4 = container.find('#number4');
     const button1 = container.find('#number1');
-  })
-
-  it('should substract number', () => {
-    const operator = container.find('#operator-subtract')
-    const button4 = container.find('#number7');
-    const button1 = container.find('#number4');
-  })
-  it('should be able to multiply', () => {
-    const operator = container.find('#operator-multiply')
-    const button3 = container.find('#number3');
-    const button5 = container.find('#number5');
-
-  })
-  it('should be able to divide', () => {
-
-    const operator = container.find('#operator-divide')
-    const button4 = container.find('#number21');
-    const button1 = container.find('#number7');
-  })
-
-  it('should concatenate multiple number clicks', () => {
     const operator = container.find('#operator_add')
-    const button3 = container.find('#number3');
-    const button5 = container.find('#number5');
-    const button1 = container.find('#number1');
+    button4.simulate('click');
+    operator.simulate('click')
+    button1.simulate('click');
+    const equal = container.find('#operator-equals')
+    equal.simulate('click')
+    const runningTotal = container.find('#running-total');
+    expect(runningTotal.text()).toEqual('5');
   })
 
-  it('should chain multiple operations', () => {
-    const operator = container.find('#operator_add')
-    const operator1 = container.find('#operator-divide')
-    const button5 = container.find('#number20');
-    const button1 = container.find('#number5');
-  })
+  // it('should substract number', () => {
+  //   const operator = container.find('#operator-subtract')
+  //   const button4 = container.find('#number7');
+  //   const button1 = container.find('#number4');
+  // })
+  // it('should be able to multiply', () => {
+  //   const operator = container.find('#operator-multiply')
+  //   const button3 = container.find('#number3');
+  //   const button5 = container.find('#number5');
 
-  it('should clear all the running total', () => {
-    const clear = container.find('#clear')
-    const operator1 = container.find('#operator-divide')
-    const button5 = container.find('#number20');
-    const button1 = container.find('#number5');
+  // })
+  // it('should be able to divide', () => {
 
-  })
+  //   const operator = container.find('#operator-divide')
+  //   const button4 = container.find('#number21');
+  //   const button1 = container.find('#number7');
+  // })
+
+  // it('should concatenate multiple number clicks', () => {
+  //   const operator = container.find('#operator_add')
+  //   const button3 = container.find('#number3');
+  //   const button5 = container.find('#number5');
+  //   const button1 = container.find('#number1');
+  // })
+
+  // it('should chain multiple operations', () => {
+  //   const operator = container.find('#operator_add')
+  //   const operator1 = container.find('#operator-divide')
+  //   const button5 = container.find('#number20');
+  //   const button1 = container.find('#number5');
+  // })
+
+  // it('should clear all the running total', () => {
+  //   const clear = container.find('#clear')
+  //   const operator1 = container.find('#operator-divide')
+  //   const button5 = container.find('#number20');
+  //   const button1 = container.find('#number5');
+
+  // })
 
 
 
