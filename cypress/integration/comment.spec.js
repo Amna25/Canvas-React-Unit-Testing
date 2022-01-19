@@ -35,5 +35,13 @@ describe("Calculator", () => {
         cy.get('.display').should('contain', '4.2')  
     })
 
+    it('should divide by zero', () => {
+      cy.get('#number4').click()
+      cy.get('#operator-divide').click()
+      cy.get('#number0').click()
+      cy.get('#operator-equals').click()
+      cy.get('.display').should('contain', 'cannot divide by zero')  
+    })
+
 
   })
