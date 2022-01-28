@@ -28,8 +28,18 @@ describe("Calculator", () => {
         cy.get('#number3').click();
         cy.get('#operator-substract').click()
         cy.get('#number4').click();
+        cy.get('#decimal').click()
+        cy.get('#number2').click()
+        cy.get('#operator_add').click()
+        cy.get('#number9').click();
+        cy.get('#number8').click();
+        cy.get('#number7').click();
+        cy.get('#number5').click();
+        cy.get('#number3').click();
+
         cy.get('#operator-equals').click()
-        cy.get('.display').should('contain', '8')
+
+        cy.get('.display').should('contain', '98760.8')
 
     })
     it('should give expected output', () => {
